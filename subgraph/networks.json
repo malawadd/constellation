@@ -1,6 +1,6 @@
 {
   "goerli": {
-    "factory": {
+    "SavingsFactory": {
       "address": "0xa95e39fa3d5aEE7C91244F7F3DeEE22C7E647132",
       "startBlock": 10190957
     }

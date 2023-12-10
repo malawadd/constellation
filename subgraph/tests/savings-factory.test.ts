@@ -4,13 +4,13 @@ import {
   test,
   clearStore,
   beforeAll,
-  afterAll
+  afterAll,
 } from "matchstick-as/assembly/index"
 import { Address } from "@graphprotocol/graph-ts"
 import { SavingsCreated } from "../generated/schema"
-import { SavingsCreated as SavingsCreatedEvent } from "../generated/factory/factory"
-import { handleSavingsCreated } from "../src/factory"
-import { createSavingsCreatedEvent } from "./factory-utils"
+import { SavingsCreated as SavingsCreatedEvent } from "../generated/SavingsFactory/SavingsFactory"
+import { handleSavingsCreated } from "../src/mappings/savings-factory"
+import { createSavingsCreatedEvent } from "./savings-factory-utils"
 
 // Tests structure (matchstick-as >=0.5.0)
 // https://thegraph.com/docs/en/developer/matchstick/#tests-structure-0-5-0
@@ -24,7 +24,7 @@ describe("Describe entity assertions", () => {
       "0x0000000000000000000000000000000000000001"
     )
     let whitelistTokens = [
-      Address.fromString("0x0000000000000000000000000000000000000001")
+      Address.fromString("0x0000000000000000000000000000000000000001"),
     ]
     let tokenDistribution = ["ethereum.Tuple Not implemented"]
     let newSavingsCreatedEvent = createSavingsCreatedEvent(
